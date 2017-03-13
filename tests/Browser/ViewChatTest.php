@@ -10,7 +10,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class ViewChatTest extends DuskTestCase
 {
-//    use DatabaseTransactions;
+    use DatabaseTransactions;
     /**
      * A Dusk test example.
      *
