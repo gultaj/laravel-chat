@@ -8,6 +8,7 @@ php:
 install:
   - cp .env.example .env
   - touch database/laravel_chat.sqlite
+  - mysql -e 'create database laravel_chat;'
   - composer self-update
   - composer install --no-interaction
   - php artisan key:generate
