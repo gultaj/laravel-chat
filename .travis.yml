@@ -7,6 +7,7 @@ php:
 
 install:
   - cp .env.dusk .env
+  - touch database/laravel_chat.sqlite
   - composer self-update
   - composer install --no-interaction
   - php artisan key:generate
