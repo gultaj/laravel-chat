@@ -6,7 +6,7 @@
         </div>
 
         <chat-list :messages="messages"></chat-list>
-        <chat-form></chat-form>
+        <chat-form @addMessage="addMessage"></chat-form>
     </div>
 </template>
 
@@ -23,7 +23,7 @@
             return {
                 messages: [
                     {
-                        title: 'New messgae',
+                        title: 'New message',
                         user: 'User 1'
                     },
                     {
@@ -32,6 +32,14 @@
                     }
                 ]
             };
-        }
+        },
+        methods: {
+            addMessage(text) {
+                this.messages.push({title: text, user: 'Test user'});
+                axios.post('/messages', {message: text})
+                    .then(res => console.log(res))
+                    .catch(err => console.log(err));
+            }
+        },
     }
 </script>

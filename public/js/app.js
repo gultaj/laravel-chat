@@ -2197,13 +2197,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             messages: [{
-                title: 'New messgae',
+                title: 'New message',
                 user: 'User 1'
             }, {
                 title: 'Test message',
                 user: 'User 2'
             }]
         };
+    },
+
+    methods: {
+        addMessage: function addMessage(text) {
+            this.messages.push({ title: text, user: 'Test user' });
+            axios.post('/messages', { message: text }).then(function (res) {
+                return console.log(res);
+            }).catch(function (err) {
+                return console.log(err);
+            });
+        }
     }
 };
 
@@ -2221,7 +2232,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = {};
+/* harmony default export */ __webpack_exports__["default"] = {
+    data: function data() {
+        return {
+            text: ''
+        };
+    },
+
+    methods: {
+        addMessage: function addMessage() {
+            if (this.text.length) {
+                this.$emit('addMessage', this.text);
+                this.text = '';
+            }
+        }
+    }
+};
 
 /***/ }),
 /* 34 */
@@ -4705,7 +4731,7 @@ if (typeof jQuery === 'undefined') {
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)();
-exports.push([module.i, "\n.chat-form {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n.chat-form input {\n    -webkit-box-flex: 1;\n        -ms-flex: 1 auto;\n            flex: 1 auto;\n    padding-left: 1rem;\n}\n.chat-form button {\n    border-radius: 0;\n}\n", ""]);
+exports.push([module.i, "\n.chat-form {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n.chat-form input {\n    -webkit-box-flex: 1;\n        -ms-flex: 1 auto;\n            flex: 1 auto;\n    padding-left: 1rem;\n    margin-left: -1px;\n    margin-right: -1px;\n}\n.chat-form button {\n    border-radius: 0;\n    margin-right: -1px;\n}\n", ""]);
 
 /***/ }),
 /* 39 */
@@ -32193,19 +32219,43 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "chat-form"
   }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.text),
+      expression: "text"
+    }],
     attrs: {
       "type": "text",
+      "name": "message",
       "placeholder": "Star typing your message..."
+    },
+    domProps: {
+      "value": (_vm.text)
+    },
+    on: {
+      "keydown": function($event) {
+        if (!('button' in $event) && _vm._k($event.keyCode, "enter", 13)) { return null; }
+        _vm.addMessage($event)
+      },
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.text = $event.target.value
+      }
     }
   }), _vm._v(" "), _c('button', {
-    staticClass: "btn btn-primary"
+    staticClass: "btn btn-primary",
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.addMessage($event)
+      }
+    }
   }, [_vm._v("Send")])])
-}]}
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -32225,7 +32275,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "messages": _vm.messages
     }
-  }), _vm._v(" "), _c('chat-form')], 1)
+  }), _vm._v(" "), _c('chat-form', {
+    on: {
+      "addMessage": _vm.addMessage
+    }
+  })], 1)
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "panel-heading"
