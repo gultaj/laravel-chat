@@ -11,6 +11,7 @@ install:
   - composer self-update
   - composer install --no-interaction
   - php artisan key:generate
+  - php artisan migrate
 
 before_script:
    - phantomjs --webdriver=127.0.0.1:9515 & # Start PhantomJS driver
