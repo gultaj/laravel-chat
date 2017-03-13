@@ -13,7 +13,7 @@ install:
   - php artisan key:generate
   - php artisan migrate
 
-  before_script:
+before_script:
    - phantomjs --webdriver=127.0.0.1:9515 & # Start PhantomJS driver
    - php artisan serve & # Start server
    - sleep 5 # Give PhantomJS and Artisan time to start
