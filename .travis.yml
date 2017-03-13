@@ -6,7 +6,7 @@ php:
   - 7.1
 
 install:
-  - cp .env.dusk .env
+  - cp .env.example .env
   - touch database/laravel_chat.sqlite
   - composer self-update
   - composer install --no-interaction
