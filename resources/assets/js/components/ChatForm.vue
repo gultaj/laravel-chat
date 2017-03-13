@@ -14,6 +14,7 @@
         display: flex;
         input {
             flex: 1 auto;
+            padding-left: 1rem;
         }
         button {
             border-radius: 0;
