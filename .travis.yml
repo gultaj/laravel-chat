@@ -8,7 +8,7 @@ before_install:
   - tar -xjf phantomjs-2.1.1-linux-i686.tar.bz2
   - ls -o /usr/local/phantomjs/bin/
   - sudo rm -rf /usr/local/phantomjs/bin/phantomjs
-  - sudo mv phantomjs-2.1.1-linux-i686 /usr/local/phantomjs/
+  - sudo mv phantomjs-2.1.1-linux-i686/bin/phantomjs /usr/local/phantomjs/bin/phantomjs
 
 before_script:
   - chmod 777 -R storage
