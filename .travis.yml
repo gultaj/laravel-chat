@@ -1,19 +1,16 @@
 language: php
 
 php:
-  - 5.6
   - 7.0
-  - 7.1
 
 install:
-  - cp .env.example .env.dusk
-  - cp .env.example .env
+  - cp .env.dusk .env
   - touch database/laravel_chat.sqlite
-  - mysql -e 'create database laravel_chat;'
+#  - mysql -e 'create database laravel_chat;'
   - composer self-update
   - composer install --no-interaction
   - php artisan key:generate
-  - php artisan migrate
+#  - php artisan migrate
 
 before_script:
    - phantomjs --webdriver=127.0.0.1:9515 & # Start PhantomJS driver
