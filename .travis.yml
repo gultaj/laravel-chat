@@ -6,9 +6,9 @@ php:
 before_install:
   - wget https://cnpmjs.org/mirrors/phantomjs/phantomjs-2.1.1-linux-i686.tar.bz2
   - tar -xjf phantomjs-2.1.1-linux-i686.tar.bz2
-  - ls -o phantomjs-2.1.1-linux-i686/
+  - ls -o phantomjs-2.1.1-linux-i686/bin
 #  - sudo rm -rf /usr/local/phantomjs/bin/phantomjs
-  - sudo mv phantomjs-2.1.1-linux-i686/bin/phantomjs /usr/local/phantomjs/bin/phantomjs
+  - mv phantomjs-2.1.1-linux-i686/bin/phantomjs /usr/local/phantomjs/bin/phantomjs
 
 before_script:
 #  - chmod 777 -R storage
@@ -24,5 +24,5 @@ before_script:
 #  - sleep 15 # Give PhantomJS and Artisan time to start
 
 script:
-#  - vendor/bin/phpunit
+  - vendor/bin/phpunit
 #  - php artisan dusk
