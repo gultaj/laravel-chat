@@ -32230,6 +32230,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }],
     attrs: {
       "type": "text",
+      "id": "message",
       "name": "message",
       "placeholder": "Star typing your message..."
     },

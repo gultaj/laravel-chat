@@ -31,7 +31,7 @@ class ViewChatTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser->loginAs(User::find(1))
                 ->visit('/home')
-                ->type('message', 'Another message')
+                ->type('#message', 'Another message')
                 ->press('Send')
                 ->pause(1000);
 
