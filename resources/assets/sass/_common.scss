@@ -1,0 +1,10 @@
+.h {
+    height: 100%;
+    &.container {
+        height: calc(100vh - 95px);
+    }
+}
+
+body, html {
+    @extend .h;
+}

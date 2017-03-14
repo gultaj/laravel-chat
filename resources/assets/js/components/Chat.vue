@@ -43,3 +43,12 @@
         },
     }
 </script>
+
+<style scoped lang="scss">
+    .panel {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        margin-bottom: 0;
+    }
+</style>

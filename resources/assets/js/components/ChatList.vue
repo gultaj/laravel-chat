@@ -16,7 +16,12 @@
 </script>
 
 <style lang="scss">
-    .chat-list .chat-message:nth-child(even) {
-        background-color: #eee;
+    .chat-list {
+        flex: 1 0 auto;
+        max-height: calc(100vh - 165px);
+        overflow: auto;
+        .chat-message:nth-child(even) {
+            background-color: #eee;
+        }
     }
 </style>

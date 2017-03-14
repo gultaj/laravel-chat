@@ -4731,7 +4731,7 @@ if (typeof jQuery === 'undefined') {
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)();
-exports.push([module.i, "\n.chat-form {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n.chat-form input {\n    -webkit-box-flex: 1;\n        -ms-flex: 1 auto;\n            flex: 1 auto;\n    padding-left: 1rem;\n    margin-left: -1px;\n    margin-right: -1px;\n}\n.chat-form button {\n    border-radius: 0;\n    margin-right: -1px;\n}\n", ""]);
+exports.push([module.i, "\n.chat-form {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-flex: 0;\n      -ms-flex: 0 0 auto;\n          flex: 0 0 auto;\n}\n.chat-form input {\n    -webkit-box-flex: 1;\n        -ms-flex: 1 auto;\n            flex: 1 auto;\n    padding-left: 1rem;\n    margin-left: -1px;\n    margin-right: -1px;\n}\n.chat-form button {\n    border-radius: 0;\n    margin-right: -1px;\n}\n", ""]);
 
 /***/ }),
 /* 39 */
@@ -4745,7 +4745,7 @@ exports.push([module.i, "\n.chat-message {\n  padding: 1rem;\n}\n.chat-message p
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)();
-exports.push([module.i, "\n.chat-list .chat-message:nth-child(even) {\n  background-color: #eee;\n}\n", ""]);
+exports.push([module.i, "\n.chat-list {\n  -webkit-box-flex: 1;\n      -ms-flex: 1 0 auto;\n          flex: 1 0 auto;\n  max-height: calc(100vh - 165px);\n  overflow: auto;\n}\n.chat-list .chat-message:nth-child(even) {\n    background-color: #eee;\n}\n", ""]);
 
 /***/ }),
 /* 41 */
@@ -32070,17 +32070,21 @@ return jQuery;
 /* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
+
+/* styles */
+__webpack_require__(66)
+
 var Component = __webpack_require__(1)(
   /* script */
   __webpack_require__(32),
   /* template */
   __webpack_require__(48),
   /* scopeId */
-  null,
+  "data-v-283266d0",
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\Doc\\Projects\\laravel-chat\\resources\\assets\\js\\components\\Chat.vue"
+Component.options.__file = "D:\\Web\\laravel-chat\\resources\\assets\\js\\components\\Chat.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Chat.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32118,7 +32122,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\Doc\\Projects\\laravel-chat\\resources\\assets\\js\\components\\ChatForm.vue"
+Component.options.__file = "D:\\Web\\laravel-chat\\resources\\assets\\js\\components\\ChatForm.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ChatForm.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32156,7 +32160,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\Doc\\Projects\\laravel-chat\\resources\\assets\\js\\components\\ChatList.vue"
+Component.options.__file = "D:\\Web\\laravel-chat\\resources\\assets\\js\\components\\ChatList.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ChatList.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32194,7 +32198,7 @@ var Component = __webpack_require__(1)(
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\Doc\\Projects\\laravel-chat\\resources\\assets\\js\\components\\ChatMessage.vue"
+Component.options.__file = "D:\\Web\\laravel-chat\\resources\\assets\\js\\components\\ChatMessage.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ChatMessage.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -41683,6 +41687,46 @@ module.exports = function(module) {
 __webpack_require__(12);
 module.exports = __webpack_require__(13);
 
+
+/***/ }),
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */,
+/* 64 */,
+/* 65 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)();
+exports.push([module.i, "\n.panel[data-v-283266d0] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  height: 100%;\n  margin-bottom: 0;\n}\n", ""]);
+
+/***/ }),
+/* 66 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(65);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(5)("6597b446", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-283266d0&scoped=true!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Chat.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-283266d0&scoped=true!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Chat.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
 
 /***/ })
 /******/ ]);

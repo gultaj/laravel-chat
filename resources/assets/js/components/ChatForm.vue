@@ -26,6 +26,7 @@
 <style lang="scss">
     .chat-form {
         display: flex;
+        flex: 0 0 auto;
         input {
             flex: 1 auto;
             padding-left: 1rem;
