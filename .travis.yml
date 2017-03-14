@@ -6,23 +6,23 @@ php:
 before_install:
   - wget https://cnpmjs.org/mirrors/phantomjs/phantomjs-2.1.1-linux-i686.tar.bz2
   - tar -xjf phantomjs-2.1.1-linux-i686.tar.bz2
-  - ls -o /usr/local/phantomjs/bin/
+  - ls -o phantomjs-2.1.1-linux-i686/
   - sudo rm -rf /usr/local/phantomjs/bin/phantomjs
   - sudo mv phantomjs-2.1.1-linux-i686/bin/phantomjs /usr/local/phantomjs/bin/phantomjs
 
 before_script:
-  - chmod 777 -R storage
-  - cp .env.dusk .env
-  - touch database/laravel_chat.sqlite
-#  - mysql -e 'create database laravel_chat;'
-  - composer self-update
-  - composer install --no-interaction
-  - php artisan key:generate
+#  - chmod 777 -R storage
+#  - cp .env.dusk .env
+#  - touch database/laravel_chat.sqlite
+##  - mysql -e 'create database laravel_chat;'
+#  - composer self-update
+#  - composer install --no-interaction
+#  - php artisan key:generate
   #  - php artisan migrate
   - phantomjs --webdriver=localhost:4444 & # Start PhantomJS driver
-  - php artisan serve & # Start server
-  - sleep 15 # Give PhantomJS and Artisan time to start
+#  - php artisan serve & # Start server
+#  - sleep 15 # Give PhantomJS and Artisan time to start
 
 script:
-  - vendor/bin/phpunit
-  - php artisan dusk
+#  - vendor/bin/phpunit
+#  - php artisan dusk
