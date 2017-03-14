@@ -6,7 +6,7 @@ php:
 install:
   - cp .env.dusk .env
   - touch database/laravel_chat.sqlite
-  - chmod 775 storage/
+  - chmod 775 -R storage/
 #  - mysql -e 'create database laravel_chat;'
   - composer self-update
   - composer install --no-interaction
