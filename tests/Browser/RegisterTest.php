@@ -25,7 +25,7 @@ class RegisterTest extends DuskTestCase
                 ->type('password_confirmation', 'secret')
                 ->press('Register');
 
-            $browser->assertPathIs('/home');
+            $browser->pause(1000)->assertPathIs('/home');
             $browser->assertSee('Laravel');
         });
     }
