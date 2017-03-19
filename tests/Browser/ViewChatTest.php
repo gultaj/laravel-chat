@@ -10,12 +10,13 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class ViewChatTest extends DuskTestCase
 {
+    use DatabaseMigrations;
     /**
      * A Dusk test example.
      *
      * @return void
      */
-    public function testExample()
+    public function testViewNewMessage()
     {
         $user = factory(User::class)->create();
 
@@ -29,9 +30,10 @@ class ViewChatTest extends DuskTestCase
     public function testAddMessage()
     {
         $this->browse(function (Browser $browser) {
-            $browser->loginAs(User::find(1))
+            $user = factory(User::class)->create();
+            $browser->loginAs($user)
                 ->visit('/home')
-                ->type('#message', 'Another message')
+                ->type('message', 'Another message')
                 ->press('Send')
                 ->pause(1000);
 

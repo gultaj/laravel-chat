@@ -14,7 +14,7 @@ class RegisterTest extends DuskTestCase
      *
      * @return void
      */
-    public function testExample()
+    public function testNewRegister()
     {
         $this->browse(function ($browser) {
             $user = factory(User::class)->make();

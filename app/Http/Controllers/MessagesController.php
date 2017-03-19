@@ -9,11 +9,11 @@ class MessagesController extends Controller
 {
     public function store(Request $request)
     {
-        $request->user()->messages()->create([
+        $message = $request->user()->messages()->create([
             'title' => $request->message
         ]);
 
-        return response(['status' => 'OK']);
+        return response(['status' => 'OK', 'data' => $message]);
     }
 
     public function show(Request $request)
