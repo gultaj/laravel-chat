@@ -9,10 +9,11 @@ modules:
     enabled: [WebDriver, Db, Asserts, \Helper\Acceptance]
     config:
         WebDriver:
-            url: http://chat.dev
+            url: http://localhost:8000
             browser: phantomjs
-        # Laravel5:
-        #     part: ORM
-        #     environment_file: .env.testing
-        #     run_database_migrations: true
+        Laravel5:
+            part: ORM
+            environment_file: .env.testing
+            run_database_migrations: true
         #     url: http://chat.dev
+        
