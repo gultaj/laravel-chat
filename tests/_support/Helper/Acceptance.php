@@ -20,9 +20,9 @@ class Acceptance extends \Codeception\Module
         \Illuminate\Support\Facades\Artisan::call('migrate:reset');
     }
 
-    // public function _failed(\Codeception\TestInterface $test, $fail)
-    // {
-    //     $this->_afterSuite();
-    // }
+    public function _failed(\Codeception\TestInterface $test, $fail)
+    {
+        // $this->_afterSuite();
+    }
     
 }

@@ -1,12 +1,4 @@
 actor: Tester
-coverage:
-    enabled: true
-    include:
-        - app/Http/*
-        - app/Message.php
-        - app/User.php
-    exclude:
-        - app/Http/Kernel.php
 paths:
     tests: tests
     log: tests/_output
@@ -32,5 +24,3 @@ modules:
             user: ''
             password: ''
             dump: tests/_data/dump.sql
-            cleanup: true
-            populate: true
