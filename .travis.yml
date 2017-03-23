@@ -2,10 +2,10 @@ language: php
 
 php:
   - 7.0
+  - 7.1
 install:
   - composer self-update
   - composer install --no-interaction
-
 before_script:
 #  - chmod 777 -R storage
   - cp .env.testing .env
@@ -13,6 +13,5 @@ before_script:
   - php artisan key:generate
   - php artisan serve &
   - sleep 5
-
 script:
   - vendor/bin/codecept run acceptance
