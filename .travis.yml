@@ -11,7 +11,7 @@ before_script:
   - cp .env.testing .env
   - touch database/database.sqlite
   - php artisan key:generate
+  - php -S localhost:8000 -t public &>/dev/null&
 
 script:
-  - php -S localhost:8000 -t public
   - vendor/bin/codecept run acceptance
