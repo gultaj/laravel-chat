@@ -10,7 +10,7 @@ modules:
     config:
         WebDriver:
             url: http://localhost:8000
-            browser: phantomjs
+            browser: firefox
         Laravel5:
             part: ORM
         #     url: http://chat.dev

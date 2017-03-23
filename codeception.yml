@@ -24,7 +24,6 @@ extensions:
     config:
         Codeception\Extension\Phantoman:
             debug: true
-            sslProtocol: any
             ignoreSslErrors: true
 modules:
     config:
