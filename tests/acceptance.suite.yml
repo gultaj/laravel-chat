@@ -10,14 +10,8 @@ modules:
     config:
         WebDriver:
             url: http://localhost:8000
-            browser: chrome
-            log_js_errors: true
-            clear_cookies: false
-            capabilities:
-                applicationCacheEnabled: true
+            browser: phantomjs
         Laravel5:
             part: ORM
-            environment_file: .env.testing
-            run_database_migrations: true
         #     url: http://chat.dev
         
