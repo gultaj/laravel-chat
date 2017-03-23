@@ -10,7 +10,11 @@ modules:
     config:
         WebDriver:
             url: http://localhost:8000
-            browser: phantomjs
+            browser: chrome
+            log_js_errors: true
+            clear_cookies: false
+            capabilities:
+                applicationCacheEnabled: true
         Laravel5:
             part: ORM
             environment_file: .env.testing

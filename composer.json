@@ -12,8 +12,10 @@
     "require-dev": {
         "codeception/codeception": "^2.2",
         "fzaninotto/faker": "~1.4",
+        "jakoch/phantomjs-installer": "^2.1",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~5.7"
+        "phpunit/phpunit": "~5.7",
+        "site5/phantoman": "^1.1"
     },
     "autoload": {
         "classmap": [
@@ -36,10 +38,12 @@
             "php artisan key:generate"
         ],
         "post-install-cmd": [
+            "PhantomInstaller\\Installer::installPhantomJS",
             "Illuminate\\Foundation\\ComposerScripts::postInstall",
             "php artisan optimize"
         ],
         "post-update-cmd": [
+            "PhantomInstaller\\Installer::installPhantomJS",
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
             "php artisan optimize"
         ]

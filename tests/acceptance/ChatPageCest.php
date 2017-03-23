@@ -3,19 +3,6 @@
 
 class ChatPageCest
 {
-    public function _before(\AcceptanceTester $I)
-    {
-        copy(base_path('.env'), base_path('.env.backup'));
-
-        copy(base_path('.env.testing'), base_path('.env'));
-    }
-
-    public function _after(\AcceptanceTester $I)
-    {
-        copy(base_path('.env.backup'), base_path('.env'));
-
-        unlink(base_path('.env.backup'));
-    }
     // tests
     public function viewMessageOnPage(AcceptanceTester $I)
     {

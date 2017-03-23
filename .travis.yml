@@ -3,26 +3,14 @@ language: php
 php:
   - 7.0
 
-before_install:
-  - wget https://cnpmjs.org/mirrors/phantomjs/phantomjs-2.1.1-linux-i686.tar.bz2
-  - tar -xjf phantomjs-2.1.1-linux-i686.tar.bz2
-  - ls -o phantomjs-2.1.1-linux-i686/bin
-#  - sudo rm -rf /usr/local/phantomjs/bin/phantomjs
-  - mv phantomjs-2.1.1-linux-i686/bin/phantomjs /usr/local/phantomjs/bin/phantomjs
-
 before_script:
 #  - chmod 777 -R storage
 #  - cp .env.dusk .env
-#  - touch database/laravel_chat.sqlite
-##  - mysql -e 'create database laravel_chat;'
-#  - composer self-update
-#  - composer install --no-interaction
-#  - php artisan key:generate
-  #  - php artisan migrate
-  - phantomjs --webdriver=localhost:4444 & # Start PhantomJS driver
-#  - php artisan serve & # Start server
-#  - sleep 15 # Give PhantomJS and Artisan time to start
+ - touch database/database.sqlite
+ - composer self-update
+ - composer install --no-interaction
+ - php artisan key:generate
 
 script:
-  - vendor/bin/phpunit
-#  - php artisan dusk
+  - php -S localhost:8000 -t public
+  - vendor/bin/codecept run acceptance

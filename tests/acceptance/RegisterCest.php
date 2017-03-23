@@ -15,7 +15,7 @@ class RegisterCest
         $I->fillField('password', 'secret');
         $I->fillField('password_confirmation', 'secret');
         
-        $I->makeScreenshot('register_page');
+        // $I->makeScreenshot('register_page');
         $I->click('button[type=submit]');
 
         $I->seeCurrentUrlEquals('/home');
