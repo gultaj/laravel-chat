@@ -11,7 +11,7 @@ before_script:
   - cp .env.testing .env
   - touch database/database.sqlite
   - php artisan key:generate
-  - php -S localhost:8000 -t public &
+  - php artisan serve &
   - sleep 5
 
 script:
