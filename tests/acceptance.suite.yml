@@ -11,6 +11,7 @@ modules:
         WebDriver:
             url: http://localhost:8000
             browser: phantomjs
+            window_size: maximize
         Laravel5:
             part: ORM
         #     url: http://chat.dev

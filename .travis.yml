@@ -14,4 +14,4 @@ before_script:
   - php artisan serve &
   - sleep 5
 script:
-  - vendor/bin/codecept run acceptance
+  - vendor/bin/codecept run

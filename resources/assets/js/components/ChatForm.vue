@@ -1,7 +1,7 @@
 <template>
     <div class="chat-form">
         <input type="text" id="message" name="message" @keydown.enter="addMessage" placeholder="Star typing your message..." v-model="text">
-        <button class="btn btn-primary" @click.prevent="addMessage">Send</button>
+        <button class="btn btn-primary" id="send-message" @click.prevent="addMessage">Send</button>
     </div>
 </template>
 

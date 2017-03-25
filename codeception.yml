@@ -17,6 +17,7 @@ extensions:
         Codeception\Extension\Phantoman:
             debug: true
             ignoreSslErrors: true
+            suites: ['acceptance']
 modules:
     config:
         Db:

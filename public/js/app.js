@@ -32109,7 +32109,7 @@ var Component = __webpack_require__(2)(
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\Doc\\Projects\\laravel-chat\\resources\\assets\\js\\components\\Chat.vue"
+Component.options.__file = "D:\\Web\\laravel-chat\\resources\\assets\\js\\components\\Chat.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Chat.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32147,7 +32147,7 @@ var Component = __webpack_require__(2)(
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\Doc\\Projects\\laravel-chat\\resources\\assets\\js\\components\\ChatForm.vue"
+Component.options.__file = "D:\\Web\\laravel-chat\\resources\\assets\\js\\components\\ChatForm.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ChatForm.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32185,7 +32185,7 @@ var Component = __webpack_require__(2)(
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\Doc\\Projects\\laravel-chat\\resources\\assets\\js\\components\\ChatList.vue"
+Component.options.__file = "D:\\Web\\laravel-chat\\resources\\assets\\js\\components\\ChatList.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ChatList.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32223,7 +32223,7 @@ var Component = __webpack_require__(2)(
   /* cssModules */
   null
 )
-Component.options.__file = "D:\\Doc\\Projects\\laravel-chat\\resources\\assets\\js\\components\\ChatMessage.vue"
+Component.options.__file = "D:\\Web\\laravel-chat\\resources\\assets\\js\\components\\ChatMessage.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ChatMessage.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -32278,6 +32278,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _vm._v(" "), _c('button', {
     staticClass: "btn btn-primary",
+    attrs: {
+      "id": "send-message"
+    },
     on: {
       "click": function($event) {
         $event.preventDefault();
