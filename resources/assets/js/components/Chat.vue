@@ -35,10 +35,13 @@
         },
         methods: {
             addMessage(text) {
-                this.messages.push({title: text, user: 'Test user'});
+                
                 axios.post('/messages', {message: text})
-                    .then(res => console.log(res))
-                    .catch(err => console.log(err));
+                    .then(res => {
+                        var message = res.data.message;
+                        this.messages.push({title: message.title, user: message.user.name});
+                    })
+                    .catch(err => {});
             }
         },
     }

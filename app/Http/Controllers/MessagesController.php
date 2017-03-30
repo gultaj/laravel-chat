@@ -12,8 +12,9 @@ class MessagesController extends Controller
         $message = $request->user()->messages()->create([
             'title' => $request->message
         ]);
+        $message->user = $request->user();
 
-        return response(['status' => 'OK', 'data' => $message]);
+        return response(['status' => 'OK', 'message' => $message]);
     }
 
     public function show(Request $request)

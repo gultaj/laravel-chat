@@ -14,7 +14,8 @@ class AddMessageCest
         $I->amOnPage('/home');
         $I->fillField('message', $message->title);
         $I->click('#send-message');
-        $I->waitForText($message->title, 5);
+        $I->waitForText($message->title, 15);
+        $I->seeInDatabase('messages', ['title' => $message->title]);
         $I->see($message->title);
     }
 }
