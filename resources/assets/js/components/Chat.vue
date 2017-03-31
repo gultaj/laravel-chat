@@ -21,29 +21,25 @@
         },
         data() {
             return {
-                messages: [
-                    {
-                        title: 'New message',
-                        user: 'User 1'
-                    },
-                    {
-                        title: 'Test message',
-                        user: 'User 2'
-                    }
-                ]
+                messages: []
             };
         },
         methods: {
-            addMessage(text) {
-                
+            addMessage(text) {       
                 axios.post('/messages', {message: text})
                     .then(res => {
-                        var message = res.data.message;
-                        this.messages.push({title: message.title, user: message.user.name});
+                        this.messages.push(res.data.message);
                     })
                     .catch(err => {});
             }
         },
+        created () {
+            axios.get('/messages')
+                .then(res => {
+                    this.messages = res.data.messages;
+                })
+                .catch(err => {});
+        }
     }
 </script>
 

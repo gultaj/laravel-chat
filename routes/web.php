@@ -20,4 +20,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::post('/messages', 'MessagesController@store');
-Route::get('/messages', 'MessagesController@show');
+Route::get('/messages', 'MessagesController@index');
