@@ -1,16 +1,14 @@
-# Codeception Test Suite Configuration
-#
-# Suite for acceptance tests.
-# Perform tests in browser using the WebDriver or PhpBrowser.
-# If you need both WebDriver and PHPBrowser tests - create a separate suite.
-
 class_name: AcceptanceTester
 modules:
     enabled: [WebDriver, Db, Asserts, \Helper\Acceptance]
     config:
         WebDriver:
             url: http://localhost:8000
-            port: 4444
             browser: phantomjs
             window_size: maximize
+        Laravel5:
+            part: ORM
+            environment_file: .env.testing
+            # run_database_seeder: true
+            # database_seeder_class: DatabaseSeeder
         

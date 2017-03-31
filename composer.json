@@ -47,6 +47,12 @@
             "PhantomInstaller\\Installer::installPhantomJS",
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
             "php artisan optimize"
+        ],
+        "server": [
+            "php artisan serve &"
+        ],
+        "test": [
+            "php -S localhost:8000 -t public & vendor/bin/codecept run"
         ]
     },
     "config": {
