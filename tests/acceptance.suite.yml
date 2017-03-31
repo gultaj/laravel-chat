@@ -8,15 +8,9 @@ class_name: AcceptanceTester
 modules:
     enabled: [WebDriver, Db, Asserts, \Helper\Acceptance]
     config:
-        # PhpBrowser:
-        #     url: http://localhost:8000
         WebDriver:
             url: http://localhost:8000
+            port: 4444
             browser: phantomjs
             window_size: maximize
-            capabilities:
-                webStorageEnabled: true
-        Laravel5:
-            part: ORM
-        #     url: http://chat.dev
         
