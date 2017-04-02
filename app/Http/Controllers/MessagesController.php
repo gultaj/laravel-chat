@@ -20,7 +20,9 @@ class MessagesController extends Controller
         ]);
         $message->user = $request->user();
 
-        return response(['status' => 'OK', 'message' => $message]);
+        broadcast(new \App\Events\NewMessage($message, $request->user()))->toOthers();
+
+        return response(['status' => 'OK', 'message' => $message], 200);
     }
 
     public function show(Request $request)

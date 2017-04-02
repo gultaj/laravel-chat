@@ -31,6 +31,9 @@
                         this.messages.push(res.data.message);
                     })
                     .catch(err => {});
+            },
+            newMessage(message) {
+                this.messages.push(message);
             }
         },
         created () {
@@ -39,6 +42,13 @@
                     this.messages = res.data.messages;
                 })
                 .catch(err => {});
+        },
+        beforeMount() {
+            this.$on('new-message', this.newMessage);
+
+            Echo.join('chat').listen('NewMessage', (e) => {
+                this.$emit('new-message', e.message);
+            });
         }
     }
 </script>
