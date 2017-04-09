@@ -2,7 +2,9 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             Chatroom
-            <span class="badge pull-right"></span>
+            <span class="label label-info pull-right" v-for="user in users">
+                {{user.name}}
+            </span>
         </div>
 
         <chat-list :messages="messages"></chat-list>
@@ -21,8 +23,17 @@
         },
         data() {
             return {
-                messages: []
+                messages: [],
+                users: []
             };
+        },
+        computed: {
+            isOnline(findUser) {
+                var i = this.users.findIndex((user) => {
+                    return user.name === findUser.name;
+                });
+                return i != -1;
+            }
         },
         methods: {
             addMessage(text) {       
@@ -46,9 +57,21 @@
         beforeMount() {
             this.$on('new-message', this.newMessage);
 
-            Echo.join('chat').listen('NewMessage', (e) => {
-                this.$emit('new-message', e.message);
-            });
+            Echo.join('chat').
+                listen('NewMessage', (e) => {
+                    this.$emit('new-message', e.message);
+                })
+                .here((users) => {
+                    this.users = users;
+                    console.log('here', users);
+                })
+                .joining((user) => {
+                    this.users.push(user);
+                  console.log('join', user);  
+                })
+                .leaving((user) => {
+                    console.log('leave', user);
+                });
         }
     }
 </script>
